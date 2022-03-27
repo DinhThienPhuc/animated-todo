@@ -1,17 +1,14 @@
 import { Box, Center, Text, VStack, useColorModeValue } from 'native-base';
+import { useCallback, useState } from 'react';
 
-import Checkbox from 'react-native-checkbox-animated';
 import TaskItem from '../components/task-item';
 import ThemeToggle from '../services/themes/themeToggle';
-import { useCallback } from 'react';
-import { useState } from 'react';
 
 const MainScreen = () => {
   const [checked, setChecked] = useState(false);
 
-  const handlePressCheckbox = useCallback((val: boolean) => {
-    setChecked(val);
-    return true;
+  const handlePressCheckbox = useCallback(() => {
+    setChecked(prev => !prev);
   }, []);
 
   return (
