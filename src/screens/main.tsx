@@ -1,5 +1,6 @@
 import { Box, Center, Text, VStack, useColorModeValue } from 'native-base';
 
+import AnimatedCheckBox from '../components/animated-checkbox';
 import ThemeToggle from '../services/themes/themeToggle';
 
 const MainScreen = () => {
@@ -11,6 +12,9 @@ const MainScreen = () => {
       flex={1}
     >
       <VStack space={5} alignItems={'center'}>
+        <Box width={'100px'} height={'100px'}>
+          <AnimatedCheckBox />
+        </Box>
         <Box p={10} bg={useColorModeValue('red.500', 'yellow.500')}>
           <Text>hello</Text>
         </Box>
