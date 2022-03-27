@@ -1,6 +1,7 @@
 import { Box, Center, Text, VStack, useColorModeValue } from 'native-base';
 
 import Checkbox from 'react-native-checkbox-animated';
+import TaskItem from '../components/task-item';
 import ThemeToggle from '../services/themes/themeToggle';
 import { useCallback } from 'react';
 import { useState } from 'react';
@@ -8,7 +9,7 @@ import { useState } from 'react';
 const MainScreen = () => {
   const [checked, setChecked] = useState(false);
 
-  const toggleCheckbox = useCallback((val: boolean) => {
+  const handlePressCheckbox = useCallback((val: boolean) => {
     setChecked(val);
     return true;
   }, []);
@@ -22,11 +23,7 @@ const MainScreen = () => {
     >
       <VStack space={5} alignItems={'center'}>
         <Box width={'100px'} height={'100px'}>
-          <Checkbox
-            label="your label here"
-            onValueChange={toggleCheckbox}
-            checked={checked}
-          />
+          <TaskItem isDone={checked} onToggleCheckbox={handlePressCheckbox} />
         </Box>
         <Box p={10} bg={useColorModeValue('red.500', 'yellow.500')}>
           <Text>hello</Text>
