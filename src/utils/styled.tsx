@@ -1,6 +1,8 @@
 import { forwardRef } from 'react';
 import { useStyledSystemPropsResolver } from 'native-base';
 
+console.log('test');
+
 export const makeStyledComponent = (Comp: any) => {
   const StyledComp = forwardRef((props: any, ref: any) => {
     const [style, restProps] = useStyledSystemPropsResolver(props);
