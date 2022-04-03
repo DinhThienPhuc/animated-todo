@@ -10,10 +10,10 @@ import {
   PanGestureHandlerGestureEvent,
   PanGestureHandlerProps
 } from 'react-native-gesture-handler';
+import { ReactNode, useCallback } from 'react';
 
 import { Box } from 'native-base';
 import { Dimensions } from 'react-native';
-import { ReactNode } from 'react';
 import { makeStyledComponent } from '../utils/styled';
 
 const StyledView = makeStyledComponent(Animated.View);
@@ -35,6 +35,8 @@ const SwipableView = ({
   simultaneousHandlers
 }: IProps) => {
   const translateX = useSharedValue(0);
+
+  const x = useCallback(() => '', []);
 
   const panGesture = useAnimatedGestureHandler<PanGestureHandlerGestureEvent>({
     onActive: event => {
