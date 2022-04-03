@@ -1,4 +1,4 @@
-import { Box, Center, Text, VStack, useColorModeValue } from 'native-base';
+import { Box, Center, Text, VStack } from 'native-base';
 import { useCallback, useState } from 'react';
 
 import TaskItem from '../components/task-item';
