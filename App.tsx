@@ -1,10 +1,10 @@
 import AppContainer from './src/containers/app';
-import MainScreen from './src/screens/main';
+import Screens from './src/screens';
 
 const App = () => {
   return (
     <AppContainer>
-      <MainScreen />
+      <Screens />
     </AppContainer>
   );
 };
